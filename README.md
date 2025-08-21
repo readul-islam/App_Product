@@ -43,6 +43,7 @@ This project uses Husky to enforce code quality before commits and pushes:
 - **Pre-push**: Runs builds across all projects to ensure everything compiles
 
 The hooks will automatically run when you:
+
 - `git commit` - Triggers pre-commit hook
 - `git push` - Triggers pre-push hook
 
