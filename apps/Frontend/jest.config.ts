@@ -7,7 +7,6 @@ const createJestConfig = nextJest({
 
 const config: Config = {
   displayName: '@survey-app/Frontend',
-  preset: '../../jest.preset.js',
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nx/react/plugins/jest',
   },

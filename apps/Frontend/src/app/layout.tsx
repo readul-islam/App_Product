@@ -1,4 +1,4 @@
-import './global.css';
+import '@survey-app/styles';
 
 export const metadata = {
   title: 'Welcome to ',

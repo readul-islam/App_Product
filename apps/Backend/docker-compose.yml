@@ -1,0 +1,44 @@
+# version: '3.8'
+
+services:
+  # PostgreSQL Database for users, billing, etc.
+  postgres:
+    image: postgres:15
+    container_name: saas_db_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: saasdb
+    ports:
+      - '5433:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # MongoDB for surveys, responses, etc.
+  mongo:
+    image: mongo:6
+    container_name: saas_db_mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo_data:/data/db
+
+  # Redis for caching and rate limiting
+  redis:
+    image: redis:7
+    container_name: saas_cache_redis
+    restart: always
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+
+volumes:
+  postgres_data:
+  mongo_data:
+  redis_data:

@@ -1,0 +1,14 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "@survey-app/Frontend",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/Frontend",
+        "command": "next dev"
+      },
+      "continuous": true
+    }
+  }
+}

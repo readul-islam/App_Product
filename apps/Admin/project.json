@@ -1,0 +1,14 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "@survey-app/Admin",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/Admin",
+        "command": "next dev"
+      },
+      "continuous": true
+    }
+  }
+}

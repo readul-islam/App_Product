@@ -1,0 +1,119 @@
+{
+  "name": "@survey-app/Backend",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "webpack-cli build",
+          "args": [
+            "--node-env=production"
+          ],
+          "cwd": "apps/Backend"
+        },
+        "configurations": {
+          "development": {
+            "args": [
+              "--node-env=development"
+            ]
+          }
+        }
+      },
+      "prune-lockfile": {
+        "dependsOn": [
+          "build"
+        ],
+        "cache": true,
+        "executor": "@nx/js:prune-lockfile",
+        "outputs": [
+          "{workspaceRoot}/apps/Backend/dist/package.json",
+          "{workspaceRoot}/apps/Backend/dist/package-lock.json"
+        ],
+        "options": {
+          "buildTarget": "build"
+        }
+      },
+      "copy-workspace-modules": {
+        "dependsOn": [
+          "build"
+        ],
+        "cache": true,
+        "outputs": [
+          "{workspaceRoot}/apps/Backend/dist/workspace_modules"
+        ],
+        "executor": "@nx/js:copy-workspace-modules",
+        "options": {
+          "buildTarget": "build"
+        }
+      },
+      "prune": {
+        "dependsOn": [
+          "prune-lockfile",
+          "copy-workspace-modules"
+        ],
+        "executor": "nx:noop"
+      },
+      "serve": {
+        "continuous": true,
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "@survey-app/Backend:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "@survey-app/Backend:build:development"
+          },
+          "production": {
+            "buildTarget": "@survey-app/Backend:build:production"
+          }
+        }
+      },
+      "test": {
+        "options": {
+          "passWithNoTests": true
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/platform-express": "^11.0.0",
+    "@nestjs/cache-manager": "^3.0.1",
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/jwt": "^11.0.0",
+    "@nestjs/mongoose": "^11.0.3",
+    "@nestjs/passport": "^11.0.5",
+    "@nestjs/platform-socket.io": "^11.1.6",
+    "@nestjs/swagger": "^11.2.0",
+    "@nestjs/throttler": "^6.4.0",
+    "@nestjs/websockets": "^11.1.6",
+    "@prisma/client": "^6.14.0",
+    "bcryptjs": "^3.0.2",
+    "cache-manager": "^7.1.1",
+    "cache-manager-redis-store": "^3.0.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.17.2",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-jwt": "^4.0.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.0",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/passport-google-oauth20": "^2.0.16",
+    "@types/passport-jwt": "^4.0.1",
+    "prisma": "^6.14.0"
+  }
+}

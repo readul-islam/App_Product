@@ -57,6 +57,29 @@
       "plugin": "@nx/jest/plugin",
       "options": {
         "targetName": "test"
+      },
+      "exclude": ["apps/Backend-e2e/**/*"]
+    },
+    {
+      "plugin": "@nx/webpack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps",
+        "serveStaticTargetName": "serve-static"
+      }
+    },
+    {
+      "plugin": "@nx/react/router-plugin",
+      "options": {
+        "buildTargetName": "build",
+        "devTargetName": "dev",
+        "startTargetName": "start",
+        "watchDepsTargetName": "watch-deps",
+        "buildDepsTargetName": "build-deps",
+        "typecheckTargetName": "typecheck"
       }
     }
   ],
@@ -70,6 +93,11 @@
       "application": {
         "style": "tailwind",
         "linter": "eslint"
+      }
+    },
+    "@nx/react": {
+      "library": {
+        "unitTestRunner": "none"
       }
     }
   }
