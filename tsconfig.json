@@ -18,12 +18,26 @@
     {
       "path": "./apps/Backend"
     },
-
     {
       "path": "./apps/Admin-e2e"
     },
     {
       "path": "./apps/Admin"
+    },
+    {
+      "path": "./packages/ui"
+    },
+    {
+      "path": "./packages/utils"
+    },
+    {
+      "path": "./packages/types"
+    },
+    {
+      "path": "./packages/types"
+    },
+    {
+      "path": "./packages/utils"
     }
   ]
 }

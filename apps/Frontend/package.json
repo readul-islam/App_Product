@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@survey-app/styles": "workspace:*",
+    "@survey-app/ui": "workspace:*",
     "flatpickr": "^4.6.13",
     "next": "~15.2.4",
     "react": "19.0.0",

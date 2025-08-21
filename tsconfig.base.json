@@ -17,6 +17,11 @@
     "strict": true,
     "target": "es2022",
     "customConditions": ["development"],
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@survey-app/types": ["packages/types/src/index.ts"],
+      "@survey-app/ui": ["packages/ui/src/index.ts"],
+      "@survey-app/utils": ["packages/utils/src/index.ts"]
+    }
   }
 }
