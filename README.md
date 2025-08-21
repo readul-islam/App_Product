@@ -1,82 +1,92 @@
-# SurveyApp
+# Survey App
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+This project was generated using [Nx](https://nx.dev).
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+## What's Next?
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/next?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+Next steps for you:
 
-## Finish your CI setup
+- [ ] Add a README to the root of your workspace
+- [ ] Add a README to each app and lib
+- [ [Customize the CI/CD configuration](https://nx.dev/recipes/other/ci-setup)
+- [ ] Join the [Nx Community Slack](https://go.nx.dev/community)
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/jtE8fA5o8r)
+## Development
 
+### Prerequisites
 
-## Run tasks
+- Node.js 20+
+- pnpm
 
-To run the dev server for your app, use:
+### Setup
 
-```sh
-npx nx dev Frontend
+```bash
+# Install dependencies
+pnpm install
+
+# Start development servers
+pnpm dev
 ```
 
-To create a production bundle:
+### Available Scripts
 
-```sh
-npx nx build Frontend
+- `pnpm dev` - Start all development servers (Frontend:3000, Admin:3001, Backend:8000)
+- `pnpm dev-front` - Start Frontend only
+- `pnpm dev-admin` - Start Admin only
+- `pnpm dev:backend` - Start Backend only
+
+## Git Hooks (Husky)
+
+This project uses Husky to enforce code quality before commits and pushes:
+
+- **Pre-commit**: Runs linting and tests across all projects
+- **Pre-push**: Runs builds across all projects to ensure everything compiles
+
+The hooks will automatically run when you:
+- `git commit` - Triggers pre-commit hook
+- `git push` - Triggers pre-push hook
+
+## CI/CD (GitHub Actions)
+
+### CI Workflow
+
+The CI workflow runs on every push and pull request to `main` and `develop` branches:
+
+1. **Setup**: Node.js 20 + pnpm
+2. **Install**: Dependencies with caching
+3. **Lint**: Run ESLint across all projects
+4. **Test**: Run Jest tests across all projects
+5. **Build**: Build all projects
+6. **Artifacts**: Upload build outputs for deployment
+
+### Deployment Workflow
+
+The deployment workflow triggers on GitHub releases:
+
+1. **Build**: All projects
+2. **Deploy**: Ready for production deployment
+
+### Manual Trigger
+
+You can manually trigger workflows from the GitHub Actions tab or by creating a release.
+
+## Project Structure
+
+- `apps/Admin` - Admin dashboard (Next.js)
+- `apps/Frontend` - Public frontend (Next.js)
+- `apps/Backend` - API server (NestJS)
+- `packages/styles` - Shared CSS/Tailwind styles
+- `libs/` - Shared libraries and utilities
+
+## Build & Test
+
+```bash
+# Build all projects
+pnpm nx run-many -t build --all
+
+# Test all projects
+pnpm nx run-many -t test --all
+
+# Lint all projects
+pnpm nx run-many -t lint --all
 ```
-
-To see all available targets to run for a project, run:
-
-```sh
-npx nx show project Frontend
-```
-
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
-
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Add new projects
-
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
-
-Use the plugin's generator to create new projects.
-
-To generate a new application, use:
-
-```sh
-npx nx g @nx/next:app demo
-```
-
-To generate a new library, use:
-
-```sh
-npx nx g @nx/react:lib mylib
-```
-
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
-
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/nx-api/next?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)

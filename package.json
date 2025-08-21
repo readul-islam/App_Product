@@ -8,7 +8,8 @@
     "dev-admin": "nx dev @survey-app/Admin -- -p 3001",
     "dev:backend": "nx serve @survey-app/Backend",
     "dev:admin": "nx serve @survey-app/Admin",
-    "start": "nx run-many -t serve -p @survey-app/Frontend,@survey-app/Backend --parallel=2"
+    "start": "nx run-many -t serve -p @survey-app/Frontend,@survey-app/Backend --parallel=2",
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
@@ -61,6 +62,7 @@
     "eslint-plugin-playwright": "^1.6.2",
     "eslint-plugin-react": "7.35.0",
     "eslint-plugin-react-hooks": "5.0.0",
+    "husky": "^9.1.7",
     "jest": "^30.0.2",
     "jest-environment-jsdom": "^30.0.2",
     "jest-environment-node": "^30.0.2",
