@@ -1,7 +1,9 @@
+'use client';
+import { Button, Input } from '@survey-app/ui';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Login() {
+export default function SingIn() {
   return (
     <main className="bg-white dark:bg-slate-900">
       <div className="relative md:flex">
@@ -78,9 +80,9 @@ export default function Login() {
                     >
                       Email Address
                     </label>
-                    <input
+                    <Input
                       id="email"
-                      className="form-input w-full"
+                      // className="form-input w-full"
                       type="email"
                     />
                   </div>
@@ -91,9 +93,9 @@ export default function Login() {
                     >
                       Password
                     </label>
-                    <input
+                    <Input
                       id="password"
-                      className="form-input w-full"
+                      // className="form-input w-full"
                       type="password"
                       autoComplete="on"
                     />
@@ -108,9 +110,7 @@ export default function Login() {
                     </Link>
                   </div>
                   <Link legacyBehavior href="/" passHref>
-                    <span className="btn bg-indigo-500 hover:bg-indigo-600 text-white ml-3">
-                      Sign In
-                    </span>
+                    <Button>Sign In</Button>
                   </Link>
                 </div>
               </form>

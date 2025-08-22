@@ -1,8 +1,8 @@
-import Login from '../../../modules/Auth/pages/Login';
+import SingIn from '../../../modules/Auth/pages/SignIn';
 const page = () => {
   return (
     <>
-      <Login />
+      <SingIn />
     </>
   );
 };

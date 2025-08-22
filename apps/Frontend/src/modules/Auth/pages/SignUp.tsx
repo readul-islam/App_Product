@@ -139,7 +139,7 @@ export default function Signup() {
                   Have an account?{' '}
                   <Link
                     className="font-medium text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400"
-                    href="login"
+                    href="signin"
                   >
                     Sign In
                   </Link>
