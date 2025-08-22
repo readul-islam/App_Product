@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "concurrently -n FRONTEND,ADMIN,BACKEND -c blue,cyan,magenta \"nx dev @survey-app/Frontend -- -p 3000\" \"nx dev @survey-app/Admin -- -p 3001\" \"nx serve @survey-app/Backend\"",
-    "dev-front": "nx dev @survey-app/Frontend -- -p 3000",
+    "dev:client": "nx dev @survey-app/Frontend -- -p 3000",
     "dev-admin": "nx dev @survey-app/Admin -- -p 3001",
     "dev:backend": "nx serve @survey-app/Backend",
     "dev:admin": "nx serve @survey-app/Admin",

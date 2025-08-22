@@ -347,22 +347,6 @@ importers:
 
   apps/Frontend-e2e: {}
 
-  libs/ui:
-    dependencies:
-      react:
-        specifier: 19.0.0
-        version: 19.0.0
-      react-dom:
-        specifier: 19.0.0
-        version: 19.0.0(react@19.0.0)
-    devDependencies:
-      '@types/react':
-        specifier: 19.0.0
-        version: 19.0.0
-      '@types/react-dom':
-        specifier: 19.0.0
-        version: 19.0.0
-
   packages/styles: {}
 
   packages/types:
