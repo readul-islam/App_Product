@@ -14,5 +14,12 @@
       "default": "./src/index.ts"
     },
     "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@survey-app/utils": "workspace:*",
+    "react-transition-group": "^4.4.5"
+  },
+  "devDependencies": {
+    "@types/react-transition-group": "^4.4.12"
   }
 }
