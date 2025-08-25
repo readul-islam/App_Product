@@ -1,7 +1,7 @@
 'use client';
 
 // import '@survey-app/styles';
-import { TooltipExamples } from '@survey-app/ui';
+import { ButtonExamples, TooltipExamples } from '@survey-app/ui';
 export default function Index() {
   /*
    * Replace the elements below with your own.
@@ -11,6 +11,7 @@ export default function Index() {
   return (
     <div className="p-10">
       <TooltipExamples />
+      <ButtonExamples />
     </div>
   );
 }
