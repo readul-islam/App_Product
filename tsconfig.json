@@ -7,19 +7,10 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/Frontend-e2e"
-    },
-    {
       "path": "./apps/Frontend"
     },
     {
-      "path": "./apps/Backend-e2e"
-    },
-    {
       "path": "./apps/Backend"
-    },
-    {
-      "path": "./apps/Admin-e2e"
     },
     {
       "path": "./apps/Admin"
@@ -32,12 +23,6 @@
     },
     {
       "path": "./packages/types"
-    },
-    {
-      "path": "./packages/types"
-    },
-    {
-      "path": "./packages/utils"
     }
   ]
 }
